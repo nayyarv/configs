@@ -1,9 +1,14 @@
-export EDITOR=subl
-export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
-export PATH="/home/varun/.local/bin:$PATH"
 
-
-source ~/Applications/antigen.zsh
+if [ "$HOST" = varun-linux ]; then
+    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+    export PATH="/home/varun/.local/bin:$PATH"
+    source ~/Applications/antigen.zsh
+    export EDITOR=subl
+else
+    export EDITOR=vim
+    export PATH="/home/varun/.local/bin:$PATH"
+    source ~/.local/antigen.zsh
+fi
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -33,7 +38,6 @@ alias pip2i="pip2 install --user"
 # haskell
 antigen bundle stack
 
-
 # editor
 antigen bundle sublime
 
@@ -56,17 +60,15 @@ fi
 
 antigen bundle forgit
 
-
 # Load the theme.
 antigen theme ys
 
 # Tell Antigen that you're done.
 antigen apply
 
-
 #fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 alias pg="ps auxwwww | grep"
-alias ll="ls -lh"
+alias ll="ls -alh"
