@@ -1,6 +1,7 @@
 #!/bin/bash
 # run this on new machines. This gets some stuff I use regularly and need in my zshrc, and are kind of foundational packages
 
+# use relative addressing here
 mkdir -p ~/.local
 curl -L git.io/antigen > ~/.local/antigen.zsh
 sudo apt-get install zsh
