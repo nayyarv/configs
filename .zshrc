@@ -1,21 +1,22 @@
-
-if [ "$HOST" = varun-linux ]; then
-    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
-    export PATH="/home/varun/.local/bin:$PATH"
-    source ~/Applications/antigen.zsh
-    export EDITOR=subl
-else
-    export EDITOR=vim
-    export PATH="/home/varun/.local/bin:$PATH"
-    source ~/.local/antigen.zsh
-fi
+source ~/.local/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
+
+if [ "$HOST" = varun-linux ]; then
+    export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+    export PATH="/home/varun/.local/bin:$PATH"
+    export EDITOR=subl
+    antigen theme robbyrussell
+else
+    export EDITOR=vim
+    export PATH="/home/varun/.local/bin:$PATH"
+    antigen theme ys
+fi
 
 
+# Bundles from the default repo (robbyrussell's oh-my-zsh).\
 antigen bundle common-aliases
 antigen bundle command-not-found
 antigen bundle copyzshell 
@@ -29,7 +30,7 @@ antigen bundle git-extras
 # python
 antigen bundle python
 antigen bundle pip
-# antigen bundle autoenv
+antigen bundle autoenv
 antigen bundle virtualenv
 
 alias pipi="pip3 install --user"
@@ -60,8 +61,7 @@ fi
 
 antigen bundle forgit
 
-# Load the theme.
-antigen theme ys
+
 
 # Tell Antigen that you're done.
 antigen apply
@@ -71,4 +71,3 @@ antigen apply
 
 
 alias pg="ps auxwwww | grep"
-alias ll="ls -alh"
