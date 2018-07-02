@@ -30,7 +30,7 @@ antigen bundle git-extras
 # python
 antigen bundle python
 antigen bundle pip
-antigen bundle autoenv
+# antigen bundle autoenv
 antigen bundle virtualenv
 
 alias pipi="pip3 install --user"
