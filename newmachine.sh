@@ -4,7 +4,6 @@
 # use relative addressing here
 mkdir -p ~/.local
 curl -L git.io/antigen > ~/.local/antigen.zsh
-sudo apt-get install zsh
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-update-rc --key-bindings --completion

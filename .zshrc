@@ -8,8 +8,17 @@ if [ "$HOST" = varun-linux ]; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
     export PATH="/home/varun/.local/bin:$PATH"
     export EDITOR=subl
+    antigen bundle sublime
     antigen theme robbyrussell
+elif [ "$HOST"  = varun-macbook]; then
+    antigen bundle brew
+    antigen bundle brew-cask
+    antigen bundle gem
+    antigen bundle osx
+    antigen bundle sublime
+    antigen bundle agkozak/agkozak-zsh-theme
 else
+    # assume we're on a server
     export EDITOR=vim
     export PATH="/home/varun/.local/bin:$PATH"
     antigen theme ys
@@ -39,9 +48,6 @@ alias pip2i="pip2 install --user"
 # haskell
 antigen bundle stack
 
-# editor
-antigen bundle sublime
-
 # having fun
 
 # Syntax highlighting bundle.
@@ -54,6 +60,7 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
     antigen bundle brew-cask
     antigen bundle gem
     antigen bundle osx
+    antigen bundle 
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     antigen bundle linuxbrew
 fi
