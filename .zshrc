@@ -4,13 +4,13 @@ source ~/.local/antigen.zsh
 antigen use oh-my-zsh
 
 
-if [ "$HOST" = varun-linux ]; then
+if [ "$HOST" = varun-ubuntu ]; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
     export PATH="/home/varun/.local/bin:$PATH"
     export EDITOR=subl
     antigen bundle sublime
     antigen theme robbyrussell
-elif [ "$HOST"  = varun-macbook]; then
+elif [ "$HOST"  = varun-macbook ]; then
     antigen bundle brew
     antigen bundle brew-cask
     antigen bundle gem
@@ -43,6 +43,8 @@ antigen bundle pip
 antigen bundle virtualenv
 
 alias pipi="pip3 install --user"
+alias pip3i="pip3 install --user"
+
 alias pip2i="pip2 install --user"
 
 # haskell
@@ -78,3 +80,4 @@ antigen apply
 
 
 alias pg="ps auxwwww | grep"
+alias P="| peco"
