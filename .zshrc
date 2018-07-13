@@ -18,7 +18,7 @@ elif [ "$HOST"  = varun-macbook.local ]; then
     antigen bundle osx
     antigen bundle sublime
     antigen theme robbyrussell
-    
+
 else
     # assume we're on a server
     export EDITOR=vim
@@ -60,12 +60,10 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen bundle forgit
 
-
-
 # Tell Antigen that you're done.
 antigen apply
 
-#fzf
+#fzf is godly
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
