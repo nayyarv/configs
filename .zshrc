@@ -15,7 +15,6 @@ if [ "$HOST" = varun-ubuntu ]; then
 elif [ "$HOST"  = varun-macbook.local ]; then
     export EDITOR=subl
     export PATH="/home/varun/.local/bin:$PATH"
-    antigen bundle gem
     antigen bundle osx
     antigen bundle sublime
     antigen theme robbyrussell
