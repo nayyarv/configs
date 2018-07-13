@@ -35,8 +35,8 @@ antigen bundle ssh-agent
 
 # git
 antigen bundle git
-antigen bundle git-flow
-antigen bundle git-extras
+# antigen bundle git-flow
+# antigen bundle git-extras
 
 # python
 antigen bundle python
