@@ -9,14 +9,17 @@ if [ "$HOST" = varun-ubuntu ]; then
     export PATH="/home/varun/.local/bin:$PATH"
     export EDITOR=subl
     antigen bundle sublime
-    antigen theme robbyrussell
-elif [ "$HOST"  = varun-macbook ]; then
-    antigen bundle brew
-    antigen bundle brew-cask
+    antigen bundle linuxbrew
+    antigen bundle agkozak/agkozak-zsh-theme
+
+elif [ "$HOST"  = varun-macbook.local ]; then
+    export EDITOR=subl
+    export PATH="/home/varun/.local/bin:$PATH"
     antigen bundle gem
     antigen bundle osx
     antigen bundle sublime
-    antigen bundle agkozak/agkozak-zsh-theme
+    antigen theme robbyrussell
+    
 else
     # assume we're on a server
     export EDITOR=vim
@@ -55,18 +58,6 @@ antigen bundle stack
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle fast-syntax-highlighting 
-
-# OS specific plugins
-if [[ $CURRENT_OS == 'OS X' ]]; then
-    antigen bundle brew
-    antigen bundle brew-cask
-    antigen bundle gem
-    antigen bundle osx
-    antigen bundle 
-elif [[ $CURRENT_OS == 'Linux' ]]; then
-    antigen bundle linuxbrew
-fi
-
 
 antigen bundle forgit
 
