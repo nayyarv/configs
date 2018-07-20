@@ -3,6 +3,7 @@ source ~/.local/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
+export PYTHONPATH="/home/varun/marvellousquestions/util:$PYTHONPATH"
 
 if [ "$HOST" = varun-ubuntu ]; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
