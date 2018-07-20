@@ -11,7 +11,7 @@ if [ "$HOST" = varun-ubuntu ]; then
     export EDITOR=subl
     antigen bundle sublime
     antigen bundle linuxbrew
-    antigen bundle agkozak/agkozak-zsh-theme
+    antigen theme agnoster
 
 elif [ "$HOST"  = varun-macbook.local ]; then
     export EDITOR=subl
