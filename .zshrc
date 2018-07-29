@@ -28,6 +28,11 @@ else
 fi
 
 
+# for machine specific thingies
+if [ -f ~/.commonrc ]; then
+    source ~/.commonrc
+fi
+
 # Bundles from the default repo (robbyrussell's oh-my-zsh).\
 antigen bundle common-aliases
 antigen bundle command-not-found
@@ -70,3 +75,4 @@ antigen apply
 
 alias pg="ps auxwwww | grep"
 alias P="| peco"
+
