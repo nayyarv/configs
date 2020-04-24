@@ -3,29 +3,33 @@ source ~/.local/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-export PYTHONPATH="/home/varun/marvellousquestions/util:$PYTHONPATH"
 
 if [ "$HOST" = varun-ubuntu ]; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
-    export PATH="/home/varun/.local/bin:$PATH"
+    export PATH="/home/varun/.local/bin:/home/varun/.gem/ruby/2.5.0/bin:$PATH"
     export EDITOR=subl
     antigen bundle sublime
     antigen bundle linuxbrew
-    antigen theme iplaces/astro-zsh-theme
-
+    antigen bundle agkozak/agkozak-zsh-prompt 
+    # antigen theme sorin
 elif [ "$HOST"  = varun-macbook.local ]; then
     export EDITOR=subl
     export PATH="/home/varun/.local/bin:$PATH"
     antigen bundle osx
     antigen bundle sublime
     antigen theme robbyrussell
-
 else
     # assume we're on a server
     export EDITOR=vim
     export PATH="/home/varun/.local/bin:$PATH"
     antigen theme ys
 fi
+
+# pyenv
+# export PATH="/home/varun/.pyenvb/strin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
 
 
 # for machine specific thingies
@@ -56,7 +60,7 @@ alias pip3i="pip3 install --user"
 alias pip2i="pip2 install --user"
 
 # haskell
-antigen bundle stack
+# antigen bundle stack
 
 # having fun
 
